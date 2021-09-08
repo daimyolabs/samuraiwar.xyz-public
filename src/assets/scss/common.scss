@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+//@import url('https://fonts.googleapis.com/css2?family=Billy&display=swap');
+@import "~@/assets/scss/fonts.scss";
+@import "~@/assets/scss/variables.scss";
+@import "~@/assets/scss/grid.scss";
+
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+@import "~@fortawesome/fontawesome-free/scss/v4-shims.scss";
+
+@media (max-width: #{$breakpoint-mobile}) {
+  .mobile-none { display: none !important; }
+  .pc-none { display: block !important; }
+}
+
+@media (min-width: #{$breakpoint-desktop}) {
+  .mobile-none { display: block !important; }
+  .pc-none { display: none !important; }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  background-color: #0c0c0c;
+}
+
+body,
+input {
+  font-size: $font-size;
+  font-family: 'Billy', cursive;
+  background: #fff;
+  color: #222;
+}
+
+input {
+  background: none;
+  border: none;
+  outline: none;
+  letter-spacing: 0.3px;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+a {
+  font-family: 'Billy', cursive;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: 'Billy', cursive;
+  letter-spacing: 0.3px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Billy', cursive;
+}
+
+span {
+  font-family: 'Billy', cursive;
+  letter-spacing: 0.3px;
+}
+
+#app {
+  position: relative;
+  overflow: hidden;
+  //transition: background-color .5s;
+  background-color: #0c0c0c;
+}
+
+.container {
+  position: relative;
+  width: $container-width !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrap {
+  position: relative;
+  width: $wrap-width !important;
+}
+
+html:not(.no-js) [data-aos=fade-up] {
+  transform: translate3d(0, 30px, 0);
+}

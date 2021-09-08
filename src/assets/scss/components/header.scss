@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+.header {
+  width: 100vw;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  background-color: rgba(12, 12, 12, 1);
+
+  .container {
+    width: 100%;
+    max-width: 1600px;
+    padding: 0 15px;
+    height: 65px;
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    &.mobile {
+      flex-flow: column nowrap;
+      justify-content: stretch;
+      height: auto;
+
+      & > .top {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 65px;
+
+        & > h1 > a {
+          font-size: 24px;
+        }
+
+        & > button {
+          margin-right: 20px;
+
+          & > svg {
+            color: #fff;
+            font-size: 36px;
+          }
+        }
+      }
+
+      & > .sub-menu {
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: stretch;
+        align-items: center;
+        padding-bottom: 20px;
+
+        & > a {
+          display: inline-block;
+          text-align: center;
+          width: 100%;
+          font-size: 36px;
+          color: #fff;
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    h1 {
+      & > a {
+        display: inline-block;
+        font-size: 36px;
+        font-style: italic;
+        padding-right: 5px;
+        color: #fff;
+        background: #FB5C0C;
+        background: -webkit-linear-gradient(to top, #FB5C0C 32%, #F8FD0A 53%, #FB5C0C 81%);
+        background: -moz-linear-gradient(to top, #FB5C0C 32%, #F8FD0A 53%, #FB5C0C 81%);
+        background: linear-gradient(to top, #FB5C0C 32%, #F8FD0A 53%, #FB5C0C 81%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        //text-shadow: 2px 2px 20px rgba(214, 150, 150, 0.5);
+      }
+    }
+
+    .menu {
+      & > a {
+        font-size: 22px;
+        color: #eee;
+        margin: 0 20px;
+      }
+    }
+  }
+}

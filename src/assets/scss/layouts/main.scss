@@ -1,0 +1,405 @@
+@charset "UTF-8";
+
+.main {
+  position: relative;
+  overflow: hidden;
+
+  .samurai-world {
+    z-index: 10;
+    width: 100vw;
+    min-height: 1080px;
+    height: calc(100vh - 65px);
+    //height: 1080px;
+    position: relative;
+    overflow: hidden;
+    image-rendering: smooth;
+    background-image: url('~@/assets/images/sky_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    & > .countdown {
+      z-index: 100;
+      margin-top: 40px;
+      width: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: stretch;
+      align-items: center;
+      position: relative;
+
+      & > div {
+        color: #fff;
+        font-size: 24px;
+        text-align: center;
+        display: flex;
+        flex-flow: row nowrap;
+        width: 327px;
+
+        &:nth-child(1) {
+          justify-content: space-between;
+          font-size: 48px;
+        }
+
+        &:nth-child(2) {
+          justify-content: space-between;
+        }
+
+        &:nth-child(3) {
+          justify-content: center;
+        }
+      }
+    }
+
+    & > .object-group {
+      z-index: 10;
+      width: 100%;
+      height: 960px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      button.metamask {
+        z-index: 100;
+        width: 140px;
+        height: 110px;
+        padding-bottom: 20px;
+        overflow: hidden;
+        position: absolute;
+        right: 1150px;
+        bottom: 650px;
+
+        background-image: url('~@/assets/images/metamask_box.png');
+        background-size: 140px 110px;
+        background-repeat: no-repeat;
+
+        transform-origin: left bottom;
+
+        animation-name: balloon;
+        //animation-delay: 1s;
+        animation-duration: .4s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+
+        & > img {
+          width: 65px;
+          position: unset;
+
+          transform-origin: center center;
+
+          animation-name: slantwise;
+          animation-duration: 3s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease-in-out;
+        }
+      }
+
+      img {
+        position: absolute;
+        image-rendering: auto;
+
+        &.tree03 {
+          z-index: 100;
+          width: auto;
+          height: auto;
+          right: 35px;
+          bottom: 100px;
+        }
+
+        &.tree02 {
+          z-index: 98;
+          width: auto;
+          height: auto;
+          right: 0;
+          bottom: 150px;
+
+        }
+
+        &.tree01 {
+          z-index: 97;
+          width: auto;
+          height: auto;
+          right: 60px;
+          bottom: 80px;
+        }
+
+        &.tree07 {
+          z-index: 96;
+          width: auto;
+          height: auto;
+          left: 110px;
+          bottom: 0;
+        }
+
+        &.tree06 {
+          z-index: 95;
+          width: auto;
+          height: auto;
+          left: 200px;
+          bottom: 0;
+        }
+
+        &.tree05 {
+          z-index: 94;
+          width: auto;
+          height: auto;
+          left: 0;
+          bottom: 0;
+        }
+
+        &.tree04 {
+          z-index: 93;
+          width: auto;
+          height: auto;
+          left: 0;
+          bottom: 0;
+        }
+
+        &.rock {
+          z-index: 92;
+          width: auto;
+          height: auto;
+          right: 0;
+          bottom: 0;
+        }
+
+        &.castle_100 {
+          z-index: 91;
+          width: auto;
+          height: auto;
+          right: 190px;
+          bottom: 215px;
+
+          animation-name: light;
+          animation-duration: 3s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease-in-out;
+
+        }
+
+        &.castle_0 {
+          z-index: 90;
+          width: auto;
+          height: auto;
+          right: 190px;
+          bottom: 215px;
+        }
+
+        &.sun {
+          z-index: 89;
+          width: auto;
+          height: auto;
+          right: 1300px;
+          bottom: 220px;
+        }
+
+        &.cloud {
+          z-index: 88;
+          width: auto;
+          height: auto;
+          right: 0;
+          bottom: 320px;
+        }
+
+        &.sea {
+          z-index: 87;
+          width: 100vw;
+          height: 378px;
+          bottom: 0;
+        }
+      }
+    }
+
+  }
+}
+
+@keyframes light {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes balloon {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slantwise {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(30deg);
+  }
+
+  50% {
+    transform: rotate(0);
+  }
+
+  75% {
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@media screen and (max-width: 1520px) {
+  .object-group {
+    & > .sun {
+      left: 100px !important;
+      right: 0 !important;
+    }
+
+    & > button.metamask {
+      left: 250px !important;
+      right: 0 !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .object-group {
+    & > .sun {
+      left: unset !important;
+      right: 300px !important;
+      top: 0 !important;
+      bottom: unset !important;
+      z-index: 86 !important;
+    }
+
+    & > button.metamask {
+      left: unset !important;
+      right: 500px !important;
+      top: unset !important;
+      bottom: 420px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .object-group {
+    & > .tree07 { display: none; }
+    & > .tree06 { display: none; }
+    & > .tree05 { display: none; }
+    & > .tree04 { display: none; }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .samurai-world > .countdown {
+    & > div {
+      font-size: 20px !important;
+      width: 280px !important;
+
+      &:nth-child(1) {
+        font-size: 24px !important;
+      }
+    }
+  }
+
+  .object-group {
+    & > *:not(.sea) {
+      //transform: scale(0.9) !important;
+    }
+
+    & > .tree03 { display: none; }
+    & > .tree02 { display: none; }
+    & > .tree01 { display: none; }
+
+    & > .rock {
+      right: -300px !important;
+    }
+
+    & > .castle_100 {
+      right: -100px !important;
+    }
+
+    & > .castle_0 {
+      right: -100px !important;
+    }
+
+    & > .cloud {
+      right: -300px !important;
+    }
+
+    & > .sun {
+      top: unset !important;
+      bottom: 200px !important;
+      right: 600px !important;
+    }
+
+    & > button.metamask {
+      left: unset !important;
+      right: 200px !important;
+      top: unset !important;
+      bottom: 420px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .object-group {
+    & > .rock {
+      right: -400px !important;
+    }
+
+    & > .castle_100 {
+      right: -200px !important;
+    }
+
+    & > .castle_0 {
+      right: -200px !important;
+    }
+
+    & > .cloud {
+      right: -400px !important;
+    }
+
+    & > .sun {
+      right: 200px !important;
+    }
+
+    & > button.metamask {
+      left: unset !important;
+      right: 100px !important;
+      top: unset !important;
+      bottom: 420px !important;
+    }
+  }
+}
+
+@media screen and (max-height: 2560px) {
+
+}
+
+@media screen and (max-height: 1920px) {
+
+}
+
+@media screen and (max-height: 1024px) {
+
+}

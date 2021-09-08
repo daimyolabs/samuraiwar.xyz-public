@@ -1,0 +1,46 @@
+@import '~@/assets/scss/variables.scss';
+
+$per: 100%;
+@mixin cornerClipPath($tip) {
+  border-radius: $tip;
+  clip-path: polygon(
+      0 0,
+      calc(#{$per} - #{$tip}) 0,
+      100% $tip,
+      100% 100%,
+      $tip 100%,
+      0 calc(#{$per} - #{$tip}),
+      0 100%
+  );
+}
+
+@mixin cornerClipPathReverse($tip) {
+  border-radius: $tip;
+  clip-path: polygon($tip 0, 100% 0, 100% calc(#{$per} - #{$tip}), calc(#{$per} - #{$tip}) 100%, 0 100%, 0 $tip);
+}
+
+@mixin bigButton {
+  display: flex;
+  margin: 0 $key-margin;
+  height: 60px;
+  background-color: $primary-red;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.125rem;
+  @include cornerClipPathReverse(14px);
+}
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+

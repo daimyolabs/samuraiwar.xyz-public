@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.footer {
+  z-index: 500;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin-right: 30px;
+  margin-bottom: 30px;
+
+  & > a {
+    color: #fff;
+    font-size: 40px;
+    margin-left: 20px;
+  }
+}
